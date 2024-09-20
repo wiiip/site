@@ -3,9 +3,17 @@
 @tailwind utilities;
 
 body {
-  @apply bg-neutral-100 text-neutral-950 font-mono;
+  @apply bg-neutral-100 text-neutral-950;
 }
 
 a {
   @apply underline underline-offset-2 decoration-neutral-500
+}
+
+h1 {
+  @apply font-medium
+}
+
+main {
+  @apply p-6 md:p-12 grid max-w-2xl mx-auto gap-6
 }
