@@ -7,6 +7,30 @@ import Square from "@/public/square.svg";
 
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
+interface ItemData {
+  href: string;
+  name: string;
+  description: string;
+  logo: StaticImport;
+  inProgress?: boolean;
+}
+
+const items: ItemData[] = [
+  {
+    href: "/test",
+    name: "Example Tool",
+    description: "This is an example tool. It does this thing.",
+    logo: Square,
+  },
+  {
+    href: "/test",
+    name: "Example Resource",
+    description: "This is an example resource. It does this thing.",
+    logo: Square,
+    inProgress: true,
+  },
+];
+
 export default function Home() {
   return (
     <Main>
@@ -37,28 +61,11 @@ export default function Home() {
           </a>
           , designed for you.
         </h2>
-        <div className="group">
-          <h3 className="opacity-0 group-hover:opacity-100 transition-all mb-2">
-            Tools
-          </h3>
-          <Item
-            href="/test"
-            name="Example Tool"
-            description="This is a an example tool. It does this thing."
-            logo={Square}
-          />
-        </div>
-        <div className="group">
-          <h3 className="opacity-0 group-hover:opacity-100 transition-all mb-2">
-            Resources
-          </h3>
-          <Item
-            inProgress
-            href="/test"
-            name="Example Resource"
-            description="This is a an example resource. It does this thing."
-            logo={Square}
-          />
+        <div></div>
+        <div className="group grid gap-4">
+          {items.map((item, index) => (
+            <Item key={index} {...item} />
+          ))}
         </div>
       </Animate>
     </Main>
@@ -89,29 +96,17 @@ function Animate({ children }: { children: React.ReactNode }) {
   );
 }
 
-function Item({
-  name,
-  description,
-  logo,
-  inProgress = false,
-  href,
-}: {
-  name: string;
-  description: string;
-  inProgress?: Boolean;
-  logo?: string | StaticImport;
-  href: string;
-}) {
+function Item({ name, description, logo, inProgress = false, href }: ItemData) {
   return (
     <Link
-      className="border rounded-md transition-all bg-secondary/50 hover:bg-secondary/20 grid grid-cols-[auto_1fr_auto] gap-4 p-4"
+      className="border rounded-md transition-all bg-secondary/50 hover:bg-secondary/20 grid grid-cols-[auto_1fr_auto] gap-4 p-4 hover:-mt-1 hover:mb-1"
       href={href}
     >
       <Image
         className="w-12 h-12 border rounded-md object-cover overflow-hidden"
-        src={logo ?? ""}
+        src={logo}
         alt={`Logo for ${name}`}
-      ></Image>
+      />
       <div>
         <h4>{name}</h4>
         <p className="text-muted-foreground font-light">{description}</p>
