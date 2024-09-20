@@ -46,13 +46,18 @@ export default function Home() {
         <div></div>
         <h1>WIP Design, tools and resources for designers.</h1>
         <Description />
-        <EmailForm label="Subscribe to WIP Design" />
         <div></div>
         <div className="group grid gap-4">
           {items.map((item, index) => (
             <Item key={index} {...item} />
           ))}
         </div>
+        <div></div>
+        <EmailForm label="Subscribe to WIP Design" />
+        <p>
+          © WIP & <a href="https://bridger.to">Bridger Tower</a>. All Rights
+          Reserved
+        </p>
       </Animate>
     </Main>
   );
