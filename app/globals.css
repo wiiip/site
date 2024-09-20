@@ -3,11 +3,9 @@
 @tailwind utilities;
 
 body {
-  @apply bg-neutral-100 text-neutral-950;
+  @apply bg-neutral-100 text-neutral-950 font-mono;
 }
 
-@media (prefers-color-scheme: dark) {
-  body {
-    @apply bg-neutral-900 text-neutral-50;
-  }
+a {
+  @apply underline underline-offset-2 decoration-neutral-500
 }
