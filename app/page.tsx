@@ -3,6 +3,8 @@ import Link from "next/link";
 import Image from "next/image";
 import Logo from "@/public/logo.svg";
 
+import Square from "@/public/square.svg";
+
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
 export default function Home() {
@@ -18,15 +20,14 @@ export default function Home() {
         />
         <div></div>
         <h1>WIP Design, tools and resources for designers.</h1>
-        <h2 className="text-muted">
-          <em>Work in Progress</em> is a mindset. It is a way of living. Never
-          stop learning. Never stop growing. Never stop becoming. A designer is
-          constantly on that path. At{" "}
+        <h2 className="text-muted-foreground">
+          <em>Work in Progress</em>. A philosophy. A journey. Never settle.
+          Always evolve. This is the designer's path. At{" "}
           <a className="inline-link" target="_blank" href="https://wip.ac">
             WIP
-          </a>{" "}
-          I wanted to build tools for the WIP Designer. This is a collection of
-          those tools and resources created by your fellow designer,{" "}
+          </a>
+          , we craft tools for the ever-evolving designer. Explore our curated
+          collection—born from the mind of{" "}
           <a
             className="inline-link"
             target="_blank"
@@ -34,7 +35,7 @@ export default function Home() {
           >
             Bridger Tower
           </a>
-          .
+          , designed for you.
         </h2>
         <div className="group">
           <h3 className="opacity-0 group-hover:opacity-100 transition-all mb-2">
@@ -44,7 +45,7 @@ export default function Home() {
             href="/test"
             name="Example Tool"
             description="This is a an example tool. It does this thing."
-            logo={Logo}
+            logo={Square}
           />
         </div>
         <div className="group">
@@ -56,7 +57,7 @@ export default function Home() {
             href="/test"
             name="Example Resource"
             description="This is a an example resource. It does this thing."
-            logo={Logo}
+            logo={Square}
           />
         </div>
       </Animate>
@@ -103,7 +104,7 @@ function Item({
 }) {
   return (
     <Link
-      className="border-neutral-300 border-[1px] rounded-md transition-all bg-neutral-100 hover:bg-neutral-50 grid grid-cols-[auto_1fr_auto] gap-4 p-4"
+      className="border rounded-md transition-all bg-secondary/50 hover:bg-secondary/20 grid grid-cols-[auto_1fr_auto] gap-4 p-4"
       href={href}
     >
       <Image
@@ -113,9 +114,13 @@ function Item({
       ></Image>
       <div>
         <h4>{name}</h4>
-        <p className="text-muted font-light">{description}</p>
+        <p className="text-muted-foreground font-light">{description}</p>
       </div>
-      {inProgress && <p className="text-muted">In Progress</p>}
+      {inProgress && (
+        <p className="text-muted-foreground text-xs border h-fit w-fit py-px bg-muted rounded-sm px-1">
+          In Progress
+        </p>
+      )}
     </Link>
   );
 }
