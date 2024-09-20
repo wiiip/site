@@ -46,7 +46,7 @@ export default function Home() {
         <h1>WIP Design, tools and resources for designers.</h1>
         <h2 className="text-muted-foreground">
           <em>Work in Progress</em>. A philosophy. A journey. Never settle.
-          Always evolve. This is the designer's path. At{" "}
+          Always evolve. This is the designer&apos;s path. At{" "}
           <a className="inline-link" target="_blank" href="https://wip.ac">
             WIP
           </a>
