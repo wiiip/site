@@ -38,20 +38,16 @@ export function EmailForm({ label }: { label?: string }) {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsLoading(true);
     try {
-      const response = await fetch(
-        "https://app.loops.so/api/v1/contacts/create",
-        {
-          method: "POST",
-          headers: {
-            Authorization: `Bearer ${process.env.LOOP_API_KEY}`,
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            email: values.email,
-            subscribed: true,
-          }),
-        }
-      );
+      const response = await fetch("https://api.loops.so/v1/contacts/create", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${process.env.NEXT_PUBLIC_LOOPS_API_KEY}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: values.email,
+        }),
+      });
 
       if (!response.ok) {
         throw new Error("Failed to subscribe");
