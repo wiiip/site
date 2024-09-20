@@ -17,7 +17,3 @@ export default function Home() {
     </main>
   );
 }
-
-const Item = ({ children, cols = 1, rows = 1 }: ItemProps) => {
-  return <div>{children}</div>;
-};
