@@ -8,10 +8,6 @@ body {
   @apply bg-neutral-100 text-neutral-950;
 }
 
-a {
-  @apply underline underline-offset-2 decoration-neutral-500 transition-all hover:text-neutral-500;
-}
-
 h1 {
   @apply font-medium;
 }
@@ -20,6 +16,10 @@ h1 {
 
 .text-muted {
   @apply text-neutral-600
+}
+
+.inline-link {
+  @apply underline underline-offset-2 decoration-neutral-500 transition-all hover:text-neutral-500;
 }
 
 /* Animations */
