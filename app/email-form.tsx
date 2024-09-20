@@ -23,7 +23,7 @@ const formSchema = z.object({
   }),
 });
 
-const EmailForm = () => {
+export const EmailForm = ({ label }: { label?: string }) => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -37,17 +37,19 @@ const EmailForm = () => {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-2">
         <FormField
           control={form.control}
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Email</FormLabel>
+              <FormLabel>{label}</FormLabel>
               <FormControl>
                 <Input placeholder="example@example.com" {...field} />
               </FormControl>
-              <FormDescription>Enter your email address.</FormDescription>
+              <FormDescription>
+                Enter your email address to subscribe.
+              </FormDescription>
               <FormMessage />
             </FormItem>
           )}
@@ -57,5 +59,3 @@ const EmailForm = () => {
     </Form>
   );
 };
-
-export default EmailForm;

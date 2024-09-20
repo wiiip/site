@@ -6,6 +6,7 @@ import Logo from "@/public/logo.svg";
 import Square from "@/public/square.svg";
 
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
+import { EmailForm } from "./email-form";
 
 interface ItemData {
   href: string;
@@ -44,23 +45,8 @@ export default function Home() {
         />
         <div></div>
         <h1>WIP Design, tools and resources for designers.</h1>
-        <h2 className="text-muted-foreground">
-          <em>Work in Progress</em>. A philosophy. A journey. Never settle.
-          Always evolve. This is the designer&apos;s path. At{" "}
-          <a className="inline-link" target="_blank" href="https://wip.ac">
-            WIP
-          </a>
-          , we craft tools for the ever-evolving designer. Explore our curated
-          collection—born from the mind of{" "}
-          <a
-            className="inline-link"
-            target="_blank"
-            href="https://bridger.to/x"
-          >
-            Bridger Tower
-          </a>
-          , designed for you.
-        </h2>
+        <Description />
+        <EmailForm />
         <div></div>
         <div className="group grid gap-4">
           {items.map((item, index) => (
@@ -119,3 +105,21 @@ function Item({ name, description, logo, inProgress = false, href }: ItemData) {
     </Link>
   );
 }
+
+const Description = () => {
+  return (
+    <h2 className="text-muted-foreground">
+      <em>Work in Progress</em>. A philosophy. A journey. Never settle. Always
+      evolve. This is the designer&apos;s path. At{" "}
+      <a className="inline-link" target="_blank" href="https://wip.ac">
+        WIP
+      </a>
+      , we craft tools for the ever-evolving designer. Explore our curated
+      collection—created by{" "}
+      <a className="inline-link" target="_blank" href="https://bridger.to/x">
+        Bridger Tower
+      </a>
+      , designed for you.
+    </h2>
+  );
+};
