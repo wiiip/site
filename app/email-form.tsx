@@ -27,6 +27,7 @@ const formSchema = z.object({
 
 export function EmailForm({ label }: { label?: string }) {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -34,9 +35,40 @@ export function EmailForm({ label }: { label?: string }) {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log("Submitted email:", values.email);
-    setIsSubmitted(true);
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    setIsLoading(true);
+    try {
+      const response = await fetch(
+        "https://app.loops.so/api/v1/contacts/create",
+        {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${process.env.LOOP_API_KEY}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: values.email,
+            subscribed: true,
+          }),
+        }
+      );
+
+      if (!response.ok) {
+        throw new Error("Failed to subscribe");
+      }
+
+      const data = await response.json();
+      console.log("Submitted email:", values.email, "Contact ID:", data.id);
+      setIsSubmitted(true);
+    } catch (error) {
+      console.error("Error submitting email:", error);
+      form.setError("email", {
+        type: "manual",
+        message: "Failed to subscribe. Please try again.",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   }
 
   return (
@@ -66,7 +98,9 @@ export function EmailForm({ label }: { label?: string }) {
                   </FormItem>
                 )}
               />
-              <Button type="submit">Submit</Button>
+              <Button type="submit" disabled={isLoading}>
+                {isLoading ? "Subscribing..." : "Subscribe"}
+              </Button>
             </form>
           </Form>
         </motion.div>

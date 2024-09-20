@@ -54,7 +54,8 @@ export default function Home() {
         </div>
         <div></div>
         <EmailForm label="Subscribe to WIP Design" />
-        <p>
+        <div></div>
+        <p className="text-muted-foreground text-xs">
           © WIP & <a href="https://bridger.to">Bridger Tower</a>. All Rights
           Reserved
         </p>
