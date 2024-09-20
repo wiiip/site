@@ -25,7 +25,7 @@ const formSchema = z.object({
   }),
 });
 
-export const EmailForm = ({ label }: { label?: string }) => {
+export function EmailForm({ label }: { label?: string }) {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -73,13 +73,13 @@ export const EmailForm = ({ label }: { label?: string }) => {
       ) : (
         <motion.div
           key="thank-you"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ type: "spring", stiffness: 100 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
         >
           Thank you for subscribing.
         </motion.div>
       )}
     </AnimatePresence>
   );
-};
+}
