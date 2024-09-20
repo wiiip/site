@@ -16,8 +16,10 @@ h1 {
   @apply font-medium;
 }
 
-main {
-  @apply p-6 md:p-12 grid max-w-2xl mx-auto gap-6;
+/* Custom Styles */
+
+.text-muted {
+  @apply text-neutral-600
 }
 
 /* Animations */
@@ -25,7 +27,7 @@ main {
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(10px);
   }
 
   to {
@@ -36,4 +38,5 @@ main {
 
 .fade-in-up {
   animation: fadeInUp 0.5s ease-out forwards;
+  opacity: 0;
 }
