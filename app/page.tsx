@@ -8,7 +8,7 @@ export default function Home() {
         "p-6 md:p-12",
         "border",
         "grid grid-cols-4",
-        "divide-x divide-y",
+        "divide-x divide-y"
       )}
     >
       <h1>WIP Design</h1>
