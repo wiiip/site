@@ -6,16 +6,21 @@ import { motion } from "framer-motion";
 interface AnimatedTextProps {
   text: string;
   className?: string;
+  delay?: number;
 }
 
-export function AnimatedText({ text, className = "" }: AnimatedTextProps) {
+export const AnimatedText = ({
+  text,
+  className = "",
+  delay = 0,
+}: AnimatedTextProps) => {
   const letters = Array.from(text);
 
   const container = {
     hidden: { opacity: 0 },
     visible: (i = 1) => ({
       opacity: 1,
-      transition: { staggerChildren: 0.03, delayChildren: 0.04 * i },
+      transition: { staggerChildren: 0.03, delayChildren: delay },
     }),
   };
 
@@ -56,4 +61,4 @@ export function AnimatedText({ text, className = "" }: AnimatedTextProps) {
       ))}
     </motion.div>
   );
-}
+};

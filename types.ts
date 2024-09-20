@@ -9,3 +9,8 @@ interface ItemProps {
   cols?: number;
   rows?: number;
 }
+
+interface AnimatedTextProps {
+  children: React.ReactNode;
+  className?: string;
+}
