@@ -46,7 +46,7 @@ export default function Home() {
         <div></div>
         <h1>WIP Design, tools and resources for designers.</h1>
         <Description />
-        <EmailForm />
+        <EmailForm label="Subscribe to WIP Design" />
         <div></div>
         <div className="group grid gap-4">
           {items.map((item, index) => (
