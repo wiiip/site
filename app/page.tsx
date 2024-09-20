@@ -4,14 +4,15 @@ import { AnimatedText } from "./animated-text";
 export default function Home() {
   return (
     <main>
+      <p>
+        <AnimatedText text="✎"></AnimatedText>
+      </p>
       <h1>
         <AnimatedText text="WIP Design"></AnimatedText>
       </h1>
       <p>
-        <AnimatedText
-          text="A collection of design tools and resources."
-          delay={0.5}
-        ></AnimatedText>
+        A collection of design tools and resources created by{" "}
+        <a href="https://bridger.to/x">Bridger Tower</a>.
       </p>
     </main>
   );

@@ -48,7 +48,7 @@ export const AnimatedText = ({
   };
 
   return (
-    <motion.div
+    <motion.span
       className={`overflow-hidden ${className}`}
       variants={container}
       initial="hidden"
@@ -59,6 +59,6 @@ export const AnimatedText = ({
           {letter === " " ? "\u00A0" : letter}
         </motion.span>
       ))}
-    </motion.div>
+    </motion.span>
   );
 };
