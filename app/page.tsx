@@ -3,6 +3,8 @@ import Link from "next/link";
 import Image from "next/image";
 import Logo from "@/public/logo.svg";
 
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
+
 export default function Home() {
   return (
     <Main>
@@ -34,14 +36,29 @@ export default function Home() {
           </a>
           .
         </h2>
-        <div></div>
-        <h3>Tools</h3>
-        <Item href="/test">Example Tool</Item>
-        <div></div>
-        <h3>Resources</h3>
-        <Item href="https://bridger.to" inProgress>
-          Example Resource
-        </Item>
+        <div className="group">
+          <h3 className="opacity-0 group-hover:opacity-100 transition-all mb-2">
+            Tools
+          </h3>
+          <Item
+            href="/test"
+            name="Example Tool"
+            description="This is a an example tool. It does this thing."
+            logo={Logo}
+          />
+        </div>
+        <div className="group">
+          <h3 className="opacity-0 group-hover:opacity-100 transition-all mb-2">
+            Resources
+          </h3>
+          <Item
+            inProgress
+            href="/test"
+            name="Example Resource"
+            description="This is a an example resource. It does this thing."
+            logo={Logo}
+          />
+        </div>
       </Animate>
     </Main>
   );
@@ -72,18 +89,33 @@ function Animate({ children }: { children: React.ReactNode }) {
 }
 
 function Item({
-  children,
-  inProgress = true,
+  name,
+  description,
+  logo,
+  inProgress = false,
   href,
 }: {
-  children: React.ReactNode;
+  name: string;
+  description: string;
   inProgress?: Boolean;
+  logo?: string | StaticImport;
   href: string;
 }) {
   return (
-    <Link href={href}>
-      {children}
-      {inProgress && <span className="text-muted ml-2">(In Progress)</span>}
+    <Link
+      className="border-neutral-300 border-[1px] rounded-md transition-all bg-neutral-100 hover:bg-neutral-50 grid grid-cols-[auto_1fr_auto] gap-4 p-4"
+      href={href}
+    >
+      <Image
+        className="w-12 h-12 border rounded-md object-cover overflow-hidden"
+        src={logo ?? ""}
+        alt={`Logo for ${name}`}
+      ></Image>
+      <div>
+        <h4>{name}</h4>
+        <p className="text-muted font-light">{description}</p>
+      </div>
+      {inProgress && <p className="text-muted">In Progress</p>}
     </Link>
   );
 }

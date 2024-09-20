@@ -5,7 +5,7 @@
 /* General Styles */
 
 body {
-  @apply bg-neutral-100 text-neutral-950;
+  @apply bg-neutral-200 text-neutral-950;
 }
 
 h1 {
