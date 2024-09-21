@@ -50,11 +50,11 @@ export default function Home() {
         </h1>
         <Description />
         <div></div>
-
+        <div></div>
         {items.map((item, index) => (
           <Item key={index} {...item} />
         ))}
-
+        <div></div>
         <div></div>
         <EmailForm label="Subscribe to WIP Design" />
         <div></div>
