@@ -47,7 +47,7 @@ h1 {
 }
 
 .inline-link {
-  @apply underline underline-offset-2 decoration-neutral-500 transition-all hover:text-neutral-500;
+  @apply underline underline-offset-2 decoration-accent transition-all hover:text-foreground;
 }
 
 @keyframes fadeInUp {
