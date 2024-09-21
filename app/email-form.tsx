@@ -1,5 +1,7 @@
 "use client";
 
+// ! MAKE SURE TO CHANGE THE SOURCE AND USER GROUP
+
 import { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -45,6 +47,8 @@ export function EmailForm({ label }: { label?: string }) {
         },
         body: JSON.stringify({
           email: values.email,
+          source: "https://wipdesign.com",
+          userGroup: "WIP Design",
         }),
       });
 
