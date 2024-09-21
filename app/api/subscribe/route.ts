@@ -4,7 +4,7 @@ const LOOPS_API_KEY = process.env.LOOP_API_KEY;
 
 export async function POST(request: Request) {
   try {
-    const { email } = await request.json();
+    const { email, source, userGroup } = await request.json();
 
     if (!email) {
       return NextResponse.json({ error: "Email is required" }, { status: 400 });
@@ -18,7 +18,7 @@ export async function POST(request: Request) {
           Authorization: `Bearer ${LOOPS_API_KEY}`,
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, source, userGroup }),
       }
     );
 
