@@ -38,10 +38,9 @@ export function EmailForm({ label }: { label?: string }) {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsLoading(true);
     try {
-      const response = await fetch("https://api.loops.so/v1/contacts/create", {
+      const response = await fetch("/api/subscribe", {
         method: "POST",
         headers: {
-          Authorization: `Bearer ${process.env.NEXT_PUBLIC_LOOPS_API_KEY}`,
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
