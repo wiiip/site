@@ -44,7 +44,10 @@ export default function Home() {
           className="-ml-1"
         />
         <div></div>
-        <h1>WIP Design, tools and resources for designers.</h1>
+        <h1>
+          <span className="font-semibold">WIP Design</span>, tools and resources
+          for designers.
+        </h1>
         <Description />
         <div></div>
         <div className="group grid gap-4">
@@ -91,7 +94,7 @@ function Animate({ children }: { children: React.ReactNode }) {
 function Item({ name, description, logo, inProgress = false, href }: ItemData) {
   return (
     <Link
-      className="border rounded-md transition-all bg-secondary/50 hover:bg-secondary/20 grid grid-cols-[auto_1fr_auto] gap-4 p-4 hover:-mt-1 hover:mb-1"
+      className="font-sans border rounded-md transition-all bg-secondary/50 hover:bg-secondary/20 grid grid-cols-[auto_1fr_auto] gap-4 p-4 hover:-mt-1 hover:mb-1"
       href={href}
     >
       <Image
@@ -101,7 +104,9 @@ function Item({ name, description, logo, inProgress = false, href }: ItemData) {
       />
       <div>
         <h4>{name}</h4>
-        <p className="text-muted-foreground font-light">{description}</p>
+        <p className="text-sm text-muted-foreground font-light">
+          {description}
+        </p>
       </div>
       {inProgress && (
         <p className="text-muted-foreground text-xs border h-fit w-fit py-px bg-muted rounded-sm px-1">
