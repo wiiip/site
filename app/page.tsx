@@ -49,15 +49,12 @@ export default function Home() {
           for designers.
         </h1>
         <Description />
-        <div></div>
-        <div></div>
         {items.map((item, index) => (
           <Item key={index} {...item} />
         ))}
-        <div></div>
-        <div></div>
-        <EmailForm label="Subscribe to WIP Design" />
-        <div></div>
+        <div className="my-8">
+          <EmailForm label="Subscribe to WIP Design" />
+        </div>
         <p className="text-muted-foreground text-xs">
           © WIP & <a href="https://bridger.to">Bridger Tower</a>. All Rights
           Reserved
@@ -119,7 +116,7 @@ function Item({ name, description, logo, inProgress = false, href }: ItemData) {
 
 const Description = () => {
   return (
-    <h2 className="text-muted-foreground">
+    <h2 className="text-muted-foreground mb-8">
       <em>Work in Progress</em>. A philosophy. A journey. Never settle. Always
       evolve. This is the designer&apos;s path. At{" "}
       <a className="inline-link" target="_blank" href="https://wip.ac">
