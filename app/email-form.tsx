@@ -8,6 +8,7 @@ import { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { motion, AnimatePresence, MotionConfig } from "framer-motion";
+import { cn } from "@/lib/utils";
 
 import useMeasure from "react-use-measure";
 import * as z from "zod";
@@ -120,9 +121,42 @@ export function EmailForm({ label }: { label?: string }) {
                         </FormItem>
                       )}
                     />
-                    <Button type="submit" disabled={isLoading}>
-                      {isLoading ? "..." : "Subscribe"}
-                    </Button>
+                    <motion.div
+                      initial={{ opacity: 1 }}
+                      animate={{ opacity: isLoading ? 0.5 : 1 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <Button
+                        className={cn("w-[98.52px]")}
+                        type="submit"
+                        disabled={isLoading}
+                      >
+                        <motion.span
+                          initial={false}
+                          animate={{
+                            opacity: isLoading ? 0 : 1,
+                            y: isLoading ? 10 : 0,
+                          }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          Subscribe
+                        </motion.span>
+                        <motion.span
+                          initial={false}
+                          animate={{
+                            opacity: isLoading ? 1 : 0,
+                            y: isLoading ? 0 : -10,
+                          }}
+                          transition={{ duration: 0.2 }}
+                          style={{
+                            position: "absolute",
+                            display: "inline-block",
+                          }}
+                        >
+                          •••
+                        </motion.span>
+                      </Button>
+                    </motion.div>
                   </form>
                 </Form>
               </motion.div>
