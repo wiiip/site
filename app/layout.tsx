@@ -1,15 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { Libre_Baskerville as FontSerif } from "next/font/google";
 
 import { Analytics } from "@vercel/analytics/react";
-
-const fontSerif = FontSerif({
-  subsets: ["latin"],
-  variable: "--font-serif",
-  weight: "400",
-});
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -37,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${fontSerif.className} ${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
         <Analytics />

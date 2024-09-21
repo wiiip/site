@@ -50,11 +50,11 @@ export default function Home() {
         </h1>
         <Description />
         <div></div>
-        <div className="group grid gap-4">
-          {items.map((item, index) => (
-            <Item key={index} {...item} />
-          ))}
-        </div>
+
+        {items.map((item, index) => (
+          <Item key={index} {...item} />
+        ))}
+
         <div></div>
         <EmailForm label="Subscribe to WIP Design" />
         <div></div>
@@ -69,7 +69,7 @@ export default function Home() {
 
 function Main({ children }: { children: React.ReactNode }) {
   return (
-    <main className="p-6 md:py-24 md:px-12 grid max-w-2xl mx-auto gap-6">
+    <main className="p-6 md:py-24 md:px-12 grid max-w-2xl mx-auto gap-4">
       {children}
     </main>
   );
@@ -94,7 +94,7 @@ function Animate({ children }: { children: React.ReactNode }) {
 function Item({ name, description, logo, inProgress = false, href }: ItemData) {
   return (
     <Link
-      className="font-sans border rounded-md transition-all bg-secondary/50 hover:bg-secondary/20 grid grid-cols-[auto_1fr_auto] gap-4 p-4 hover:-mt-1 hover:mb-1"
+      className="border rounded-md transition-all bg-secondary/50 hover:bg-secondary/20 grid grid-cols-[auto_1fr_auto] gap-4 p-4 hover:-mt-1 hover:mb-1"
       href={href}
     >
       <Image

@@ -80,7 +80,6 @@ export function EmailForm({ label }: { label?: string }) {
       <motion.div
         animate={{ height: bounds.height > 0 ? bounds.height : undefined }}
         transition={{ type: "spring", bounce: 0.2, duration: 0.8 }}
-        className="font-sans"
       >
         <div ref={ref}>
           <AnimatePresence mode="wait">
