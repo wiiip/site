@@ -18,13 +18,13 @@ interface ItemData {
 
 const items: ItemData[] = [
   {
-    href: "/test",
+    href: "/",
     name: "Example Tool",
     description: "This is an example tool. It does this thing.",
     logo: Square,
   },
   {
-    href: "/test",
+    href: "/",
     name: "Example Resource",
     description: "This is an example resource. It does this thing.",
     logo: Square,
