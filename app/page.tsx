@@ -102,11 +102,8 @@ function Animate({ children }: { children: React.ReactNode }) {
 }
 
 function Item({ name, description, logo, inProgress = false, href }: ItemData) {
-  return (
-    <Link
-      className="border rounded-md transition-all bg-secondary/50 hover:bg-secondary/20 grid grid-cols-[auto_1fr_auto] gap-4 p-4 hover:-mt-1 hover:mb-1"
-      href={href}
-    >
+  const ItemContent = () => (
+    <>
       <Image
         className="w-12 h-12 border rounded-md object-cover overflow-hidden"
         src={logo}
@@ -123,6 +120,19 @@ function Item({ name, description, logo, inProgress = false, href }: ItemData) {
           In Progress
         </p>
       )}
+    </>
+  );
+
+  return inProgress ? (
+    <div className="border rounded-md transition-all bg-secondary/50 grid grid-cols-[auto_1fr_auto] gap-4 p-4">
+      <ItemContent />
+    </div>
+  ) : (
+    <Link
+      className="border rounded-md transition-all bg-secondary/50 hover:bg-secondary/20 grid grid-cols-[auto_1fr_auto] gap-4 p-4 hover:-mt-1 hover:mb-1"
+      href={href}
+    >
+      <ItemContent />
     </Link>
   );
 }
