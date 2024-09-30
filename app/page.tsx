@@ -21,14 +21,20 @@ const items: ItemData[] = [
   {
     href: "https://github.com/brijr/craft",
     name: "Craft",
-    description: "Open-source design system",
+    description: "Technical design system for React",
     logo: Square,
   },
   {
     href: "https://github.com/brijr/components",
     name: "Components",
-    description: "Open-source component library",
+    description: "Collection of components for building websites",
     logo: Square,
+  },
+  {
+    href: "https://youtube.com/@bridgertower",
+    name: "YouTube",
+    description: "Design tutorials and videos",
+    logo: YT,
   },
   {
     href: "https://designforai.org",
@@ -36,12 +42,6 @@ const items: ItemData[] = [
     description: "Designing the future of computers",
     logo: Square,
     inProgress: true,
-  },
-  {
-    href: "https://youtube.com/@bridgertower",
-    name: "YouTube",
-    description: "Design tutorials and videos",
-    logo: YT,
   },
 ];
 
