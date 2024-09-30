@@ -35,6 +35,7 @@ const items: ItemData[] = [
     name: "Design for AI",
     description: "Designing the future of computers",
     logo: Square,
+    inProgress: true,
   },
   {
     href: "https://youtube.com/@bridgertower",
