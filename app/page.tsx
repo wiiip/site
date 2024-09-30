@@ -4,6 +4,7 @@ import Image from "next/image";
 import Logo from "@/public/logo.svg";
 
 import Square from "@/public/square.svg";
+import YT from "@/public/yt.svg";
 
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import { EmailForm } from "./email-form";
@@ -18,17 +19,28 @@ interface ItemData {
 
 const items: ItemData[] = [
   {
-    href: "/",
-    name: "Example Tool",
-    description: "This is an example tool. It does this thing.",
+    href: "https://github.com/brijr/craft",
+    name: "Craft",
+    description: "Open-source design system",
     logo: Square,
   },
   {
-    href: "/",
-    name: "Example Resource",
-    description: "This is an example resource. It does this thing.",
+    href: "https://github.com/brijr/components",
+    name: "Components",
+    description: "Open-source component library",
     logo: Square,
-    inProgress: true,
+  },
+  {
+    href: "https://designforai.org",
+    name: "Design for AI",
+    description: "Designing the future of computers",
+    logo: Square,
+  },
+  {
+    href: "https://youtube.com/@bridgertower",
+    name: "YouTube",
+    description: "Design tutorials and videos",
+    logo: YT,
   },
 ];
 
