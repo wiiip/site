@@ -19,6 +19,13 @@ interface ItemData {
 
 const items: ItemData[] = [
   {
+    href: "https://designengineer.fyi",
+    name: "designengineer.fyi",
+    description: "Resources and Inspiration for Design Engineers",
+    logo: YT,
+    inProgress: true,
+  },
+  {
     href: "https://github.com/brijr/craft",
     name: "Craft",
     description: "Technical design system for React",
