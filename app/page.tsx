@@ -2,7 +2,6 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Logo from "@/public/logo.svg";
-
 import Square from "@/public/square.svg";
 import YT from "@/public/yt.svg";
 
@@ -18,6 +17,13 @@ interface ItemData {
 }
 
 const items: ItemData[] = [
+  {
+    href: "https://abstract.ac",
+    name: "Abstract",
+    description: "Portfolios for creatives / abstract.ac",
+    logo: Square,
+    inProgress: true,
+  },
   {
     href: "https://designengineer.fyi",
     name: "designengineer.fyi",
