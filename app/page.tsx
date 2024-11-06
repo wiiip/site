@@ -111,7 +111,7 @@ function Animate({ children }: { children: React.ReactNode }) {
   );
 }
 
-function Item({ name, description, logo, inProgress = false, href }: ItemData) {
+function Item({ name, description, inProgress = false, href }: ItemData) {
   const ItemContent = () => (
     <>
       <div className="text-sm">
