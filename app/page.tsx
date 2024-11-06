@@ -25,6 +25,13 @@ const items: ItemData[] = [
     inProgress: true,
   },
   {
+    href: "https://designforai.org",
+    name: "Design for AI",
+    description: "Designing the future of computers",
+    logo: Square,
+    inProgress: true,
+  },
+  {
     href: "https://designengineer.fyi",
     name: "designengineer.fyi",
     description: "Resources and inspiration for Design Engineers",
@@ -44,16 +51,9 @@ const items: ItemData[] = [
   },
   {
     href: "https://youtube.com/@bridgertower",
-    name: "YouTube",
+    name: "Design Engineering YouTube",
     description: "Design tutorials and videos",
     logo: YT,
-  },
-  {
-    href: "https://designforai.org",
-    name: "Design for AI",
-    description: "Designing the future of computers",
-    logo: Square,
-    inProgress: true,
   },
 ];
 
@@ -116,17 +116,11 @@ function Animate({ children }: { children: React.ReactNode }) {
 function Item({ name, description, logo, inProgress = false, href }: ItemData) {
   const ItemContent = () => (
     <>
-      <Image
-        className="w-12 h-12 border rounded-md object-cover overflow-hidden"
-        src={logo}
-        alt={`Logo for ${name}`}
-      />
-      <div>
+      <div className="text-sm">
         <h4>{name}</h4>
-        <p className="text-sm text-muted-foreground font-light">
-          {description}
-        </p>
+        <p className="text-muted-foreground font-light">{description}</p>
       </div>
+
       {inProgress && (
         <p className="text-muted-foreground text-xs border h-fit w-fit py-px bg-muted rounded-sm px-1">
           In Progress
@@ -135,13 +129,9 @@ function Item({ name, description, logo, inProgress = false, href }: ItemData) {
     </>
   );
 
-  return inProgress ? (
-    <div className="border rounded-md transition-all bg-secondary/50 grid grid-cols-[auto_1fr_auto] gap-4 p-4">
-      <ItemContent />
-    </div>
-  ) : (
+  return (
     <Link
-      className="border rounded-md transition-all bg-secondary/50 hover:bg-secondary/20 grid grid-cols-[auto_1fr_auto] gap-4 p-4 hover:-mt-1 hover:mb-1"
+      className="border transition-all bg-secondary/50 hover:bg-secondary/20 grid grid-cols-[1fr_auto] gap-4 py-2 px-3 hover:-mt-1 hover:mb-1"
       href={href}
     >
       <ItemContent />
