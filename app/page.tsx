@@ -12,7 +12,6 @@ interface ItemData {
   href: string;
   name: string;
   description: string;
-  logo: StaticImport;
   inProgress?: boolean;
 }
 
@@ -21,39 +20,33 @@ const items: ItemData[] = [
     href: "https://abstract.ac",
     name: "Abstract",
     description: "Portfolios for creatives / abstract.ac",
-    logo: Square,
     inProgress: true,
   },
   {
     href: "https://designforai.org",
     name: "Design for AI",
     description: "Designing the future of computers",
-    logo: Square,
     inProgress: true,
   },
   {
     href: "https://designengineer.fyi",
     name: "designengineer.fyi",
     description: "Resources and inspiration for Design Engineers",
-    logo: YT,
   },
   {
     href: "https://github.com/brijr/craft",
     name: "Craft",
     description: "Technical design system for React",
-    logo: Square,
   },
   {
     href: "https://github.com/brijr/components",
     name: "Components",
     description: "Collection of components for building websites",
-    logo: Square,
   },
   {
     href: "https://youtube.com/@bridgertower",
     name: "Design Engineering YouTube",
     description: "Design tutorials and videos",
-    logo: YT,
   },
 ];
 
