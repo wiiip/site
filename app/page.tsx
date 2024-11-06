@@ -35,18 +35,23 @@ const items: ItemData[] = [
   },
   {
     href: "https://github.com/brijr/craft",
-    name: "Craft",
+    name: "brijr/craft",
     description: "Technical design system for React",
   },
   {
-    href: "https://github.com/brijr/components",
-    name: "Components",
+    href: "https://components.bridger.to",
+    name: "brijr/components",
     description: "Collection of components for building websites",
   },
   {
     href: "https://youtube.com/@bridgertower",
-    name: "Design Engineering YouTube",
+    name: "YouTube",
     description: "Design tutorials and videos",
+  },
+  {
+    href: "https://x.com/wipdes",
+    name: "X",
+    description: "Follow WIP Design on X",
   },
 ];
 
