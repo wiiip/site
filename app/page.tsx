@@ -18,14 +18,14 @@ interface ItemData {
 const items: ItemData[] = [
   {
     href: "https://abstract.ac",
-    name: "Abstract",
-    description: "Portfolios for creatives / abstract.ac",
+    name: "abstract.ac",
+    description: "Portfolios for creatives",
     inProgress: true,
   },
   {
     href: "https://designforai.org",
-    name: "Design for AI",
-    description: "Designing the future of computers",
+    name: "designforai.org",
+    description: "The UI and UX of AI design.",
     inProgress: true,
   },
   {
@@ -45,13 +45,23 @@ const items: ItemData[] = [
   },
   {
     href: "https://youtube.com/@bridgertower",
-    name: "YouTube",
+    name: "youtube.com/@bridgertower",
     description: "Design tutorials and videos",
   },
   {
     href: "https://x.com/wipdes",
-    name: "X",
+    name: "x.com/wipdes",
     description: "Follow WIP Design on X",
+  },
+  {
+    href: "https://bsky.app/profile/wipdes.com",
+    name: "bsky.app/profile/wipdes.com",
+    description: "Follow WIP Design on Bluesky",
+  },
+  {
+    href: "https://www.instagram.com/wip_des",
+    name: "instagram.com/wip_des",
+    description: "Follow WIP Design on Instragram",
   },
 ];
 
