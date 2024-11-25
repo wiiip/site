@@ -2,10 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Logo from "@/public/logo.svg";
-import Square from "@/public/square.svg";
-import YT from "@/public/yt.svg";
 
-import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import { EmailForm } from "./email-form";
 
 interface ItemData {
@@ -85,7 +82,7 @@ export default function Home() {
         {items.map((item, index) => (
           <Item key={index} {...item} />
         ))}
-        <div className="my-8">
+        <div className="my-8 border-l pl-6 py-2 hover:bg-accent/30 transtion-all">
           <EmailForm label="Subscribe to WIP Design" />
         </div>
         <p className="text-muted-foreground text-xs">
@@ -124,9 +121,11 @@ function Animate({ children }: { children: React.ReactNode }) {
 function Item({ name, description, inProgress = false, href }: ItemData) {
   const ItemContent = () => (
     <>
-      <div className="text-sm">
-        <h4>{name}</h4>
-        <p className="text-muted-foreground font-light">{description}</p>
+      <div>
+        <h4 className="text-sm">{name}</h4>
+        <p className="text-muted-foreground text-xs font-light">
+          {description}
+        </p>
       </div>
 
       {inProgress && (
@@ -139,7 +138,7 @@ function Item({ name, description, inProgress = false, href }: ItemData) {
 
   return (
     <Link
-      className="border transition-all bg-secondary/50 hover:bg-secondary/20 grid grid-cols-[1fr_auto] gap-4 py-2 px-3 hover:-mt-1 hover:mb-1"
+      className="border rounded-sm transition-all bg-secondary/50 hover:bg-secondary/20 grid grid-cols-[1fr_auto] gap-4 p-2 hover:-mt-1 hover:mb-1"
       href={href}
     >
       <ItemContent />
