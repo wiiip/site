@@ -82,7 +82,7 @@ export default function Home() {
         {items.map((item, index) => (
           <Item key={index} {...item} />
         ))}
-        <div className="my-8 border-l pl-6 py-2 hover:bg-accent/30 transtion-all">
+        <div className="my-8">
           <EmailForm label="Subscribe to WIP Design" />
         </div>
         <p className="text-muted-foreground text-xs">
