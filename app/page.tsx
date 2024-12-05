@@ -20,9 +20,15 @@ const items: ItemData[] = [
     inProgress: true,
   },
   {
+    href: "https://designbooks.org",
+    name: "designbooks.org",
+    description: "A collection of the best books on design",
+    inProgress: true,
+  },
+  {
     href: "https://designforai.org",
     name: "designforai.org",
-    description: "The UI and UX of AI design.",
+    description: "The UI and UX of AI design",
     inProgress: true,
   },
   {
