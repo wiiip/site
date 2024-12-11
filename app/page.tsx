@@ -23,7 +23,6 @@ const items: ItemData[] = [
     href: "https://designbooks.org",
     name: "designbooks.org",
     description: "A collection of the best books on design",
-    inProgress: true,
   },
   {
     href: "https://designforai.org",
