@@ -14,10 +14,20 @@ interface ItemData {
 
 const items: ItemData[] = [
   {
-    href: "https://abstract.ac",
-    name: "abstract.ac",
+    href: "https://wrk.so",
+    name: "wrk.so",
     description: "Portfolios for creatives",
     inProgress: true,
+  },
+  {
+    href: "https://craft-ds.com",
+    name: "craft-ds.com",
+    description: "Technical design system for React",
+  },
+  {
+    href: "https://components.work",
+    name: "components.work",
+    description: "Collection of components for building websites",
   },
   {
     href: "https://designbooks.org",
@@ -25,45 +35,14 @@ const items: ItemData[] = [
     description: "A collection of the best books on design",
   },
   {
-    href: "https://designforai.org",
-    name: "designforai.org",
-    description: "The UI and UX of AI design",
-    inProgress: true,
-  },
-  {
-    href: "https://designengineer.fyi",
-    name: "designengineer.fyi",
-    description: "Resources and inspiration for Design Engineers",
-  },
-  {
-    href: "https://github.com/brijr/craft",
-    name: "brijr/craft",
-    description: "Technical design system for React",
-  },
-  {
-    href: "https://components.bridger.to",
-    name: "brijr/components",
-    description: "Collection of components for building websites",
-  },
-  {
     href: "https://youtube.com/@bridgertower",
-    name: "youtube.com/@bridgertower",
+    name: "youtube.com",
     description: "Design tutorials and videos",
   },
   {
-    href: "https://x.com/wipdes",
-    name: "x.com/wipdes",
-    description: "Follow WIP Design on X",
-  },
-  {
-    href: "https://bsky.app/profile/wipdes.com",
-    name: "bsky.app/profile/wipdes.com",
-    description: "Follow WIP Design on Bluesky",
-  },
-  {
-    href: "https://www.instagram.com/wip_des",
-    name: "instagram.com/wip_des",
-    description: "Follow WIP Design on Instragram",
+    href: "https://x.com/bridgertower",
+    name: "x.com",
+    description: "Follow along on X",
   },
 ];
 
