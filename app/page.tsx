@@ -58,16 +58,17 @@ export default function Home() {
           className="-ml-1"
         />
         <div></div>
+        <div></div>
         <h1>
-          <span className="font-semibold">WIP Design</span>, tools and resources
-          for designers.
+          <span className="font-semibold">Work In Progress</span> makes tools
+          and resources for designers.
         </h1>
         <Description />
         {items.map((item, index) => (
           <Item key={index} {...item} />
         ))}
         <div className="my-8">
-          <EmailForm label="Subscribe to WIP Design" />
+          <EmailForm label="Subscribe to Work In Progress" />
         </div>
         <p className="text-muted-foreground text-xs">
           © WIP & <a href="https://bridger.to">Bridger Tower</a>. All Rights
