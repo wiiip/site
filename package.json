@@ -25,10 +25,10 @@
     "react-use-measure": "^2.1.7",
     "tailwind-merge": "^2.6.0",
     "tailwindcss-animate": "^1.0.7",
-    "zod": "^3.25.75"
+    "zod": "^3.25.76"
   },
   "devDependencies": {
-    "@types/node": "^20.19.4",
+    "@types/node": "^20.19.7",
     "@types/react": "^18.3.23",
     "@types/react-dom": "^18.3.7",
     "eslint": "^8.57.1",
